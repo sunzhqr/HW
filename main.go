@@ -12,6 +12,11 @@ func main() {
 
 	fmt.Println(userId)
 
+	cache.Set("userId", 32)
+	userId = cache.Get("userId")
+
+	fmt.Println(userId)
+
 	cache.Delete("userId")
 	userId = cache.Get("userId")
 

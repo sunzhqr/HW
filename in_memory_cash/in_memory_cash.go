@@ -20,11 +20,7 @@ func (c Cache) Get(k string) interface{} {
 }
 
 func (c *Cache) Set(k string, v interface{}) {
-	for key, _ := range c.m {
-		if key == k {
-			c.m[key] = v
-		}
-	}
+	c.m[k] = v
 }
 
 func (c *Cache) Delete(k string) {
