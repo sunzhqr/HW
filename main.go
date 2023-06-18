@@ -1,19 +1,19 @@
 package main
 
 import (
-	"./in_memory_cash"
 	"fmt"
+	"github.com/sunzhqr/HW/tree/main/hm/in_memory_cash/in_memory_cash"
 )
 
 func main() {
-	Cache := in_memory_cash.Cache
-	Cache.Set("userId", 42)
-	userId := Cache.Get("userId")
+	cache := in_memory_cash.New()
+	cache.Set("userId", 42)
+	userId := cache.Get("userId")
 
 	fmt.Println(userId)
 
-	Cache.Delete("userId")
-	userId = Cache.Get("userId")
+	cache.Delete("userId")
+	userId = cache.Get("userId")
 
 	fmt.Println(userId)
 }
